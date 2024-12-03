@@ -20,15 +20,23 @@ struct HeaderView: View {
                 Button {
                     isPresented = true
                 } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .foregroundStyle(.green)
-                        .font(.headline)
+                    ZStack {
+                        Image(systemName: "circle.fill")
+                            .foregroundStyle(.white)
+                            .font(.title)
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundStyle(.green)
+                            .font(.title)
+                    }
+                    
                 }
             }
             .padding()
             .background(.indigo)
             .sheet(isPresented: $isPresented) {
                 TextField("Deck name", text: $deckNewName)
+                    .padding()
+                    .textFieldStyle(.roundedBorder)
                 Button {
                     userDataModel.addDeck(name: deckNewName)
                 } label: {
@@ -37,8 +45,14 @@ struct HeaderView: View {
                         .font(.footnote)
                         .frame(width: 200, height: 70)
                         .background(.green)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
                 }
-
+                TextField("", text: .constant(""))
+                         .frame(width: 0, height: 0)
+                         .opacity(0)
+                         .onAppear {
+                             print("Keyboard resources preloaded.")
+                         }
             }
     }
 }

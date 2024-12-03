@@ -46,6 +46,7 @@ class UserDataModel: ObservableObject {
            newCard.translate = translation
            newCard.userDeck = deck
            saveContext()
+        
        }
     
     func getCardCount(for deck: CustomUserDeck) -> Int {

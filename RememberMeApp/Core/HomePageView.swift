@@ -11,20 +11,17 @@ struct HomePageView: View {
     @State private var selectedtabMain = 1
     var body: some View {
         HeaderView()
-            .border(.red)
         VStack {
             if selectedtabMain == 1 {
-                Text("Home page")
-                    .border(.green)
+                //                MainHomePAge()
+                //                    .padding()
             } else if selectedtabMain == 2 {
                 DecksPageView()
             } else {
                 Text("User settings")
-                    .border(.green)
             }
             Spacer()
             CustomTabView(selectedTab: $selectedtabMain)
-                .border(.orange)
         }
     }
 }

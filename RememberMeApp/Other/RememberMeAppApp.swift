@@ -15,6 +15,11 @@ struct RememberMeAppApp: App {
         WindowGroup {
             HomePageView()
                 .environmentObject(userDataModel)
+                .onAppear {
+                           DispatchQueue.global(qos: .userInitiated).async {
+                               CoreDataController.shared.presistenceContainer.loadPersistentStores(completionHandler: <#T##(NSPersistentStoreDescription, (any Error)?) -> Void#>)
+                           }
+                       }
         }
     }
 }
