@@ -31,11 +31,11 @@ struct CardsListPageView: View {
                         userDataModel.deleteCard(cardToDelete)
                     }
                 }
-                .listStyle(.plain)
                 .onAppear {
                     refreshCards()
                 }
             }
+            .listStyle(.plain)
             .navigationTitle(deck.name ?? "Deck")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

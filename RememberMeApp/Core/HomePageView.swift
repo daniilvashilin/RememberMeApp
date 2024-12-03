@@ -13,8 +13,8 @@ struct HomePageView: View {
         HeaderView()
         VStack {
             if selectedtabMain == 1 {
-                //                MainHomePAge()
-                //                    .padding()
+                                MainHomePAge()
+                                    .padding()
             } else if selectedtabMain == 2 {
                 DecksPageView()
             } else {
