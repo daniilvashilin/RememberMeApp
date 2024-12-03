@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="24B91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Cards" representedClassName="Cards" syncable="YES" codeGenerationType="class">
+        <attribute name="translate" attributeType="String"/>
+        <attribute name="word" attributeType="String"/>
+        <relationship name="userDeck" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CustomUserDeck" inverseName="userDeck" inverseEntity="CustomUserDeck"/>
+    </entity>
+    <entity name="CustomUserDeck" representedClassName="CustomUserDeck" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="userDeck" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cards" inverseName="userDeck" inverseEntity="Cards"/>
+    </entity>
+</model>

@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "6836E800-5638-45E4-8C07-9AFED94420C3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:RememberMeApp.xcodeproj",
+      "identifier" : "A5E3AAB62CFDA4F700AF44EF",
+      "name" : "RememberMeApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RememberMeApp.xcodeproj",
+        "identifier" : "A551C5822CFDC9CC00DD79A3",
+        "name" : "RememberMeAppTesting"
+      }
+    }
+  ],
+  "version" : 1
+}
