@@ -10,11 +10,12 @@ struct HeaderView: View {
     @EnvironmentObject var userDataModel: UserDataModel
     @State private var isPresented: Bool = false
     @State var deckNewName = ""
+    @State var headerPageText: String
     var body: some View {
         HStack {
-            Text("RememberMe")
+            Text(headerPageText)
                 .foregroundStyle(.white)
-                .font(.headline)
+                .font(.title)
             Spacer()
             
             Button {
@@ -34,18 +35,18 @@ struct HeaderView: View {
         .padding()
         .background(.indigo)
         .sheet(isPresented: $isPresented) {
+            Text("Add deck")
             TextField("Deck name", text: $deckNewName)
                 .padding()
                 .textFieldStyle(.roundedBorder)
             Button {
                 userDataModel.addDeck(name: deckNewName)
+                isPresented = false
+                deckNewName = ""
             } label: {
                 Text("Add deck")
-                    .foregroundStyle(.white)
-                    .font(.footnote)
-                    .frame(width: 200, height: 70)
-                    .background(.green)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .getCustomButtonStyle()
+                    .padding()
             }
         }
     }

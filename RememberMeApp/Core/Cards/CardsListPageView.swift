@@ -7,11 +7,11 @@ struct CardsListPageView: View {
     @State private var enterWord = ""
     @State private var enterTranslation = ""
     @State private var cards: [Cards] = []
-    
+    @State private var startGmae = false
     var body: some View {
         VStack {
             List {
-                ForEach(userDataModel.fetchCards(for: deck), id: \.self) { card in
+                ForEach(cards, id: \.self) { card in
                     HStack {
                         Image(.aCard)
                             .resizable()
@@ -25,13 +25,11 @@ struct CardsListPageView: View {
                         }
                     }
                 }
-                .onDelete {offsets in
+                .onDelete { offsets in
                     for index in offsets {
                         let cardToDelete = cards[index]
                         userDataModel.deleteCard(cardToDelete)
                     }
-                }
-                .onAppear {
                     refreshCards()
                 }
             }
@@ -44,6 +42,17 @@ struct CardsListPageView: View {
                         addButtonPressed = true
                     }) {
                         Image(systemName: "plus.diamond.fill")
+                            .font(.headline)
+                            .foregroundStyle(.blue)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        startGmae = true
+                    }) {
+                        Image(systemName: "gamecontroller.circle.fill")
+                            .font(.title)
+                            .foregroundStyle(.purple)
                     }
                 }
             }
@@ -58,23 +67,27 @@ struct CardsListPageView: View {
                         .textFieldStyle(.roundedBorder)
                     Button {
                         userDataModel.addCard(to: deck, word: enterWord, translation: enterTranslation)
+                        addButtonPressed = false
+                        refreshCards()
+                        enterWord = ""
+                        enterTranslation = ""
                     } label: {
                         Text("Add Card")
-                            .frame(width: 200, height: 70, alignment: .center)
-                            .background(Color.green)
-                            .foregroundColor(Color.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .getCustomButtonStyle()
                             .padding()
                     }
                 }
             }
         }
+        .onAppear {
+            refreshCards()
+        }
+        .sheet(isPresented: $startGmae) {
+            CardGameView()
+        }
     }
-    
     private func refreshCards() {
-        // Используем ваш метод getCards(for:) для получения карт
-        cards = userDataModel.getCards(for: deck)
+        // Приватный метод для обновления списка карт
+        cards = userDataModel.fetchCards(for: deck)
     }
 }
-
-

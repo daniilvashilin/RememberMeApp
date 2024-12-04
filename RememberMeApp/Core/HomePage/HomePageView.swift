@@ -10,12 +10,16 @@ import SwiftUI
 struct HomePageView: View {
     @State private var selectedtabMain = 1
     var body: some View {
-        HeaderView()
+        if selectedtabMain == 1 {
+            HeaderView(headerPageText: "Decks")
+        } else if selectedtabMain == 2 {
+            HeaderView(headerPageText: "Settings")
+        }
         VStack {
             if selectedtabMain == 1 {
                 DecksPageView()
             } else if selectedtabMain == 2 {
-                Text("User settings")
+                UserSettingsVIew()
             } 
             Spacer()
             CustomTabView(selectedTab: $selectedtabMain)
