@@ -44,7 +44,7 @@ final class RememberMeAppTesting: XCTestCase {
         deck2.name = "Deck 2"
         
         try context.save()
-        userDataModel.fetchDeck()
+        userDataModel.fetchDecks()
         
         XCTAssertEqual(userDataModel.deckStore.count, 2, "Ожидалось 2 колоды")
         XCTAssertEqual(userDataModel.deckStore[0].name, "Deck 1", "Название первой колоды не совпадает")

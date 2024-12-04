@@ -15,41 +15,48 @@ struct DecksPageView: View {
     @State private var isPresented: Bool = false
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Your decks")
-                    .foregroundStyle(.black)
+            if userDataModel.deckStore.isEmpty {
+                Text("No decks yet")
+                    .foregroundStyle(.secondary)
                     .font(.headline)
-                    .padding()
-                List {
-                    ForEach(userDataModel.deckStore, id: \.self) {deck in
-                        NavigationLink {
-                            CardsListPageView(deck: deck)
-                        } label: {
-                            HStack {
-                                Image(.flash)
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                
-                                Text(deck.name ?? "")
-                                    .foregroundStyle(.black)
-                                    .font(.footnote)
-                                Spacer()
-                                Text("\(userDataModel.getCardCount(for: deck)) cards")
-                                    .font(.footnote)
-                                    .foregroundStyle(.black)
+                    .onAppear(perform: userDataModel.fetchDecks)
+            } else {
+                VStack {
+                    Text("Your decks")
+                        .foregroundStyle(.black)
+                        .font(.headline)
+                        .padding()
+                    List {
+                        ForEach(userDataModel.deckStore, id: \.self) {deck in
+                            NavigationLink {
+                                CardsListPageView(deck: deck)
+                            } label: {
+                                HStack {
+                                    Image(.flash)
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                    
+                                    Text(deck.name ?? "")
+                                        .foregroundStyle(.black)
+                                        .font(.footnote)
+                                    Spacer()
+                                    Text("\(userDataModel.getCardCount(for: deck)) cards")
+                                        .font(.footnote)
+                                        .foregroundStyle(.black)
+                                }
+                            }
+                        }
+                        .onDelete { offsets in
+                            for index in offsets {
+                                let deck = userDataModel.deckStore[index]
+                                userDataModel.deleteDeck(deck)
                             }
                         }
                     }
-                    .onDelete { offsets in
-                        for index in offsets {
-                            let deck = userDataModel.deckStore[index]
-                            userDataModel.deleteDeck(deck)
-                        }
-                    }
+                    .listStyle(.plain)
+                    .onAppear(perform: userDataModel.fetchDecks)
+                    .padding(.horizontal)
                 }
-                .listStyle(.plain)
-                .onAppear(perform: userDataModel.fetchDecks)
-                .padding(.horizontal)
             }
         }
     }

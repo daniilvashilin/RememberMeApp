@@ -15,6 +15,7 @@ struct RememberMeAppApp: App {
         WindowGroup {
             HomePageView()
                 .environmentObject(userDataModel)
+                .preferredColorScheme(.light)
         }
     }
 }

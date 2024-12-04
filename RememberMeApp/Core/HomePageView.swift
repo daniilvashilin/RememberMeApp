@@ -13,13 +13,10 @@ struct HomePageView: View {
         HeaderView()
         VStack {
             if selectedtabMain == 1 {
-                                MainHomePAge()
-                                    .padding()
-            } else if selectedtabMain == 2 {
                 DecksPageView()
-            } else {
+            } else if selectedtabMain == 2 {
                 Text("User settings")
-            }
+            } 
             Spacer()
             CustomTabView(selectedTab: $selectedtabMain)
         }
