@@ -6,50 +6,67 @@
 //
 
 import SwiftUI
-
 struct CardGameView: View {
-    @State private var isRunningGame = false
-    @State private var isGameStarted = false
-    @State var cardingValue: Int
+    @StateObject private var gameData: GameDataModel
     @Binding var stopGame: Bool
-    @State private var currentNumberOfCards: Int = 0
-    @EnvironmentObject private var userDataModel: UserDataModel
+    @State private var scale: CGFloat = 0.5
+
+    init(cardingValue: Int, stopGame: Binding<Bool>) {
+        _gameData = StateObject(wrappedValue: GameDataModel(cardingValue: cardingValue))
+        self._stopGame = stopGame
+    }
+
     var body: some View {
         VStack {
-            HStack {
-                // Timer
-                TimerGameView(isRuning: $isGameStarted)
-                Spacer()
-                // current/count cards
-                Text("\(currentNumberOfCards)/\(cardingValue)")
-                    .font(.headline)
-                Spacer()
-                // End game button
-                
-                Button {
-                    stopGame = false
-                } label: {
-                    Image(systemName: "xmark.rectangle.fill")
-                        .foregroundStyle(.red)
-                        .font(.title)
+            if gameData.showResult == false {
+                HStack {
+                    // Таймер
+                    TimerGameView(isRuning: $gameData.isGameStarted, timeElapsedResualt: $gameData.timeElapsed)
+                    Spacer()
+                    // Карты
+                    Text("\(gameData.currentNumberOfCards)/\(gameData.cardingValue)")
+                        .font(.headline)
+                    Spacer()
+                    // Кнопки управления
+                    GameControlsView(isGameStarted: $gameData.isGameStarted, showAlert: $gameData.showAlert)
+                        .alert(isPresented: $gameData.showAlert) {
+                            Alert(
+                                title: Text("End the game?"),
+                                message: Text("Are you sure you want to close the game?"),
+                                primaryButton: .default(Text("Yes")) { gameData.showResult = true },
+                                secondaryButton: .cancel(Text("No"))
+                            )
+                            
+                        }
                 }
-                
-                // Pause button
-                
-                Button {
-                     isGameStarted.toggle()
-                } label: {
-                    Image(systemName: isGameStarted ? "pause.rectangle.fill" : "play.rectangle.fill")
-                        .font(.title)
-                        .foregroundStyle(isGameStarted ? .blue : .green)
-                }
-               
-
+                .padding()
+                Spacer()
+            } else {
+                Text("Congratulations!")
+                    .font(.largeTitle)
+                    .foregroundStyle(.black)
+                    .scaleEffect(scale)
+                                .onAppear {
+                                    withAnimation(.spring(response: 0.4, dampingFraction: 0.3, blendDuration: 0)) {
+                                        scale = 1.0
+                                    }
+                                }
+                                .padding(.top, 100)
+                Spacer()
             }
-            .padding()
-            Spacer()
         }
-       
+        .overlay {
+            if gameData.showResult {
+                GameResultView(
+                    formatedTime: gameData.formattedTime,
+                    currentNumberOfCards: gameData.currentNumberOfCards,
+                    cardingValue: gameData.cardingValue
+                ) {
+                    stopGame = false
+                    gameData.resetGame()
+                }
+            }
+        }
     }
 }
 

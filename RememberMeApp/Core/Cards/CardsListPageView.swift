@@ -3,12 +3,13 @@ import SwiftUI
 struct CardsListPageView: View {
     @EnvironmentObject var userDataModel: UserDataModel
     var deck: CustomUserDeck
-
     @State private var addButtonPressed = false
     @State private var enterWord = ""
     @State private var enterTranslation = ""
     @State private var cards: [Cards] = []
     @State private var startGame = false
+    @State private var isGameStarted = false
+    @State private var showAlert = false
 
     var body: some View {
         VStack {

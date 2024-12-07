@@ -26,3 +26,33 @@ extension View {
         modifier(CustomSettingsButtonForList(textColor: textColor, font: font))
     }
 }
+extension Double {
+    func formattedTime() -> String {
+        let minutes = Int(self) / 60
+        let seconds = Int(self) % 60
+        let milliseconds = Int((self - Double(Int(self))) * 100)
+        return String(format: "%02d:%02d:%02d", minutes, seconds, milliseconds)
+    }
+}
+
+extension Timer {
+    static func setUpTimer(isRunning: Binding<Bool>, timerElapsed: Binding<Double>, timeElapsedResult: Binding<Double>) {
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+            if isRunning.wrappedValue {
+                timerElapsed.wrappedValue += 0.01
+                timeElapsedResult.wrappedValue += 0.01
+            }
+        }
+    }
+}
+
+
+
+//private func setupTimer() {
+//    Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+//        if isRuning {
+//            timeElapsed += 0.01
+//            timeElapsedResualt += 0.01
+//        }
+//    }
+//}
