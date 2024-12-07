@@ -3,13 +3,16 @@ import SwiftUI
 struct CardsListPageView: View {
     @EnvironmentObject var userDataModel: UserDataModel
     var deck: CustomUserDeck
+
     @State private var addButtonPressed = false
     @State private var enterWord = ""
     @State private var enterTranslation = ""
     @State private var cards: [Cards] = []
-    @State private var startGmae = false
+    @State private var startGame = false
+
     var body: some View {
         VStack {
+            // Список карточек
             List {
                 ForEach(cards, id: \.self) { card in
                     HStack {
@@ -36,6 +39,8 @@ struct CardsListPageView: View {
             .listStyle(.plain)
             .navigationTitle(deck.name ?? "Deck")
             .navigationBarTitleDisplayMode(.inline)
+
+            // Toolbar с кнопками
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
@@ -48,7 +53,7 @@ struct CardsListPageView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        startGmae = true
+                        startGame = true
                     }) {
                         Image(systemName: "gamecontroller.circle.fill")
                             .font(.title)
@@ -56,38 +61,42 @@ struct CardsListPageView: View {
                     }
                 }
             }
+
+            // Модальное окно добавления карточки
             .sheet(isPresented: $addButtonPressed) {
-                VStack {
-                    Text("Add card")
-                    TextField("Word", text: $enterWord)
-                        .padding()
-                        .textFieldStyle(.roundedBorder)
-                    TextField("Translate", text: $enterTranslation)
-                        .padding()
-                        .textFieldStyle(.roundedBorder)
-                    Button {
-                        userDataModel.addCard(to: deck, word: enterWord, translation: enterTranslation)
-                        addButtonPressed = false
-                        refreshCards()
-                        enterWord = ""
-                        enterTranslation = ""
-                    } label: {
-                        Text("Add Card")
-                            .getCustomButtonStyle()
-                            .padding()
-                    }
-                }
+                            VStack {
+                                Text("Add card")
+                                TextField("Word", text: $enterWord)
+                                    .padding()
+                                    .textFieldStyle(.roundedBorder)
+                                TextField("Translate", text: $enterTranslation)
+                                    .padding()
+                                    .textFieldStyle(.roundedBorder)
+                                Button {
+                                    userDataModel.addCard(to: deck, word: enterWord, translation: enterTranslation)
+                                    addButtonPressed = false
+                                    refreshCards()
+                                    enterWord = ""
+                                    enterTranslation = ""
+                                } label: {
+                                    Text("Add Card")
+                                        .getCustomButtonStyle()
+                                        .padding()
+                                }
+                            }
+                        }
+
+            // Модальное окно игры
+            .sheet(isPresented: $startGame) {
+                
+                CardGameView(
+                    cardingValue: userDataModel.getCardCount(for: deck), stopGame: $startGame)
             }
         }
-        .onAppear {
-            refreshCards()
-        }
-        .sheet(isPresented: $startGmae) {
-            CardGameView()
-        }
+        .onAppear(perform: refreshCards)
     }
+
     private func refreshCards() {
-        // Приватный метод для обновления списка карт
         cards = userDataModel.fetchCards(for: deck)
     }
 }
