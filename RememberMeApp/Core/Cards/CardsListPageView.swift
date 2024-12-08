@@ -89,9 +89,7 @@ struct CardsListPageView: View {
 
             // Модальное окно игры
             .sheet(isPresented: $startGame) {
-                
-                CardGameView(
-                    cardingValue: userDataModel.getCardCount(for: deck), stopGame: $startGame)
+                MainGamePageView(deck: deck)
             }
         }
         .onAppear(perform: refreshCards)

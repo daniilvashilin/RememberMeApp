@@ -34,7 +34,9 @@ struct CardGameView: View {
                                 title: Text("End the game?"),
                                 message: Text("Are you sure you want to close the game?"),
                                 primaryButton: .default(Text("Yes")) { gameData.showResult = true },
-                                secondaryButton: .cancel(Text("No"))
+                                secondaryButton: .cancel(Text("No")) {
+                                    gameData.isGameStarted = true
+                                }
                             )
                             
                         }
