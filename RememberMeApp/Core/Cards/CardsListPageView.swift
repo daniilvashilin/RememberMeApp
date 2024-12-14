@@ -8,9 +8,8 @@ struct CardsListPageView: View {
     @State private var enterTranslation = ""
     @State private var cards: [Cards] = []
     @State private var startGame = false
-    @State private var isGameStarted = false
-    @State private var showAlert = false
-
+//    @State private var isGameStarted = false
+//    @State private var showAlert = false
     var body: some View {
         VStack {
             // Список карточек
@@ -32,9 +31,10 @@ struct CardsListPageView: View {
                 .onDelete { offsets in
                     for index in offsets {
                         let cardToDelete = cards[index]
+                        print("Deleting card: \(cardToDelete.word ?? "Unknown")")
                         userDataModel.deleteCard(cardToDelete)
                     }
-                    refreshCards()
+                    refreshCards() // Обновляем массив после удаления
                 }
             }
             .listStyle(.plain)
@@ -85,12 +85,13 @@ struct CardsListPageView: View {
                                         .padding()
                                 }
                             }
+                            .onAppear(perform: refreshCards)
                         }
 
             // Модальное окно игры
-            .sheet(isPresented: $startGame) {
-                MainGamePageView(deck: deck)
-            }
+//            .sheet(isPresented: $startGame) {
+//                MainGamePageView(deck: deck)
+//            }
         }
         .onAppear(perform: refreshCards)
     }

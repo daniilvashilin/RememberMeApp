@@ -67,9 +67,21 @@ class UserDataModel: ObservableObject {
        }
     
     func deleteCard(_ card: Cards) {
-            context.delete(card)
-            saveContext()
+        guard let context = card.managedObjectContext else { return }
+        context.performAndWait {
+            if context.registeredObject(for: card.objectID) != nil {
+                context.delete(card)
+                do {
+                    try context.save()
+                    print("Card deleted successfully")
+                } catch {
+                    print("Failed to delete card: \(error.localizedDescription)")
+                }
+            } else {
+                print("Card does not exist in context")
+            }
         }
+    }
     
     func clearDecks() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = CustomUserDeck.fetchRequest()
