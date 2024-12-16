@@ -22,7 +22,7 @@ extension View {
 }
 
 extension View {
-    func getCustomSettingsButtonForList(textColor: Color = .black, font: Font = .footnote) -> some View {
+    func getCustomSettingsButtonForList(textColor: Color = .black, font: Font = .title3) -> some View {
         modifier(CustomSettingsButtonForList(textColor: textColor, font: font))
     }
 }
@@ -45,14 +45,9 @@ extension Timer {
         }
     }
 }
-
-
-
-//private func setupTimer() {
-//    Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
-//        if isRuning {
-//            timeElapsed += 0.01
-//            timeElapsedResualt += 0.01
-//        }
+//
+//extension View {
+//    func getCustomAddButtonStyle(sclaeEffect: CGFloat = 1.2) -> some View {
+//        buttonStyle(CustomAddButtonStyle(scaleEffect: sclaeEffect))
 //    }
 //}

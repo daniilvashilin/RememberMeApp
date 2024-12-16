@@ -45,8 +45,27 @@ struct CustomSettingsButtonForList: ViewModifier {
             .font(font)
     }
 }
-
-
+//
+//
+//struct CustomAddButtonStyle: ButtonStyle {
+//    let scaleEffect: CGFloat
+//    
+//    init(scaleEffect: CGFloat) {
+//        self.scaleEffect = scaleEffect
+//    }
+//    
+//    func makeBody(configuration: Configuration) -> some View {
+//        configuration.label
+//            .font(.title)
+//            .scaleEffect(configuration.isPressed ? scaleEffect : 1)
+//            .foregroundStyle(.white)
+//            .background(.green)
+//            .frame(width: 250, height: 70)
+//            .clipShape(RoundedRectangle(cornerRadius: 15))
+//    }
+//}
+//
+//
 
 
 

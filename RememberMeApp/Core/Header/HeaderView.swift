@@ -45,9 +45,10 @@ struct HeaderView: View {
                 deckNewName = ""
             } label: {
                 Text("Add deck")
-                    .getCustomButtonStyle()
+                    .getCustomButtonStyle(bakcGroundColor: deckNewName.isEmpty ? .secondary : .green)
                     .padding()
             }
+            .disabled(deckNewName.isEmpty)
         }
     }
 }

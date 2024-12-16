@@ -40,7 +40,7 @@ struct UserSettingsVIew: View {
                     .getCustomSettingsButtonForList()
                 }
                 Button {
-                    // Rate AppStore
+                    openAppStorePage()
                 } label: {
                     HStack {
                         Text("Rate us on AppStore")
@@ -76,4 +76,12 @@ struct UserSettingsVIew: View {
     }
 }
                     
-                    
+private func openAppStorePage() {
+    if let url = URL(string: "https://apps.apple.com/app/id1234567890") {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            print("App Store is not available.")
+        }
+    }
+}

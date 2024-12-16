@@ -6,34 +6,13 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5E3AAB62CFDA4F700AF44EF"
-               BuildableName = "RememberMeApp.app"
-               BlueprintName = "RememberMeApp"
-               ReferencedContainer = "container:RememberMeApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:RememberMeApp.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -43,39 +22,6 @@
                BlueprintIdentifier = "A5ADA9752D108D940037EC83"
                BuildableName = "RememberMeAppUITests.xctest"
                BlueprintName = "RememberMeAppUITests"
-               ReferencedContainer = "container:RememberMeApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A551C5752CFDC95A00DD79A3"
-               BuildableName = "RememberMeAppTests.xctest"
-               BlueprintName = "RememberMeAppTests"
-               ReferencedContainer = "container:RememberMeApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A551C5822CFDC9CC00DD79A3"
-               BuildableName = "RememberMeAppTesting.xctest"
-               BlueprintName = "RememberMeAppTesting"
-               ReferencedContainer = "container:RememberMeApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5C7587C2D0C5673006F419D"
-               BuildableName = "RememberMeAppTests_Testing.xctest"
-               BlueprintName = "RememberMeAppTests_Testing"
                ReferencedContainer = "container:RememberMeApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -108,8 +54,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A5E3AAB62CFDA4F700AF44EF"
@@ -117,7 +62,7 @@
             BlueprintName = "RememberMeApp"
             ReferencedContainer = "container:RememberMeApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

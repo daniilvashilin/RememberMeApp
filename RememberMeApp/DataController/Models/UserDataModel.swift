@@ -28,6 +28,7 @@ class UserDataModel: ObservableObject {
             print("Failed to fetch decks: \(error.localizedDescription)")
         }
     }
+    
     func addDeck(name: String) {
         let newDeck = CustomUserDeck(context: context)
         newDeck.name = name
@@ -70,6 +71,30 @@ class UserDataModel: ObservableObject {
             context.delete(card)
             saveContext()
         }
+    
+    func editCard(_ card: Cards, newWord: String, newTranslation: String) {
+        card.word = newWord
+        card.translate = newTranslation
+        saveContext()
+        do {
+            try context.save() // Сохраняем изменения в Core Data
+            print("Card edited successfully: \(card.word ?? "Unknown")")
+        } catch {
+            print("Failed to edit card: \(error.localizedDescription)")
+        }
+    }
+    
+    func editDeck(_ deck: CustomUserDeck, newName: String) {
+        deck.name = newName
+        saveContext()
+        fetchDecks()
+        do {
+            try context.save() // Сохраняем изменения в Core Data
+            print("Deck edited successfully: \(deck.name ?? "Unknown")")
+        } catch {
+            print("Failed to edit Deck: \(error.localizedDescription)")
+        }
+    }
     
     func clearDecks() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = CustomUserDeck.fetchRequest()

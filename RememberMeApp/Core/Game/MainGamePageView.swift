@@ -9,15 +9,18 @@ import SwiftUI
 
 struct MainGamePageView: View {
      var deck: CustomUserDeck
+    @EnvironmentObject private var userDataModel: UserDataModel
+    @State private var currentCount = 0
     var body: some View {
         VStack {
-            CardFlipLogicView(deck: deck)
+            CardFlipLogicView(currentCount: $currentCount, deck: deck)
             Button {
                 
             } label: {
-                Image(systemName: "checkmark.rectangle.fill")
-                    .font(.largeTitle)
-                    .foregroundStyle(.green)
+                Text("\(currentCount)/\(userDataModel.getCardCount(for: deck))")
+                    .font(.title)
+                    .foregroundStyle(.black)
+                    .padding()
             }
 
         }

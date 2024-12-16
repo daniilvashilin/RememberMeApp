@@ -3,7 +3,7 @@
     <entity name="Cards" representedClassName="Cards" syncable="YES" codeGenerationType="class">
         <attribute name="translate" attributeType="String"/>
         <attribute name="word" attributeType="String"/>
-        <relationship name="userDeck" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CustomUserDeck" inverseName="userDeck" inverseEntity="CustomUserDeck"/>
+        <relationship name="userDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomUserDeck" inverseName="userDeck" inverseEntity="CustomUserDeck"/>
     </entity>
     <entity name="CustomUserDeck" representedClassName="CustomUserDeck" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>

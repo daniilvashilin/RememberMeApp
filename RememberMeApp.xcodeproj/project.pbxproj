@@ -7,21 +7,14 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		A551C56D2CFDC8C200DD79A3 /* PBXContainerItemProxy */ = {
+		A5ADA97C2D108D940037EC83 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5E3AAAF2CFDA4F700AF44EF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5E3AAB62CFDA4F700AF44EF;
 			remoteInfo = RememberMeApp;
 		};
-		A551C57A2CFDC95A00DD79A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5E3AAAF2CFDA4F700AF44EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5E3AAB62CFDA4F700AF44EF;
-			remoteInfo = RememberMeApp;
-		};
-		A551C5872CFDC9CD00DD79A3 /* PBXContainerItemProxy */ = {
+		A5C758812D0C5673006F419D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5E3AAAF2CFDA4F700AF44EF /* Project object */;
 			proxyType = 1;
@@ -31,17 +24,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A551C5692CFDC8C200DD79A3 /* RememberMeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A551C5762CFDC95A00DD79A3 /* RememberMeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A551C5832CFDC9CC00DD79A3 /* RememberMeAppTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMeAppTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A551C58C2CFDCFFF00DD79A3 /* RememberMeApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RememberMeApp.xctestplan; sourceTree = "<group>"; };
+		A5ADA9762D108D940037EC83 /* RememberMeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5C7587D2D0C5673006F419D /* RememberMeAppTests_Testing.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMeAppTests_Testing.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E3AAB72CFDA4F700AF44EF /* RememberMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A551C5842CFDC9CD00DD79A3 /* RememberMeAppTesting */ = {
+		A5ADA9772D108D940037EC83 /* RememberMeAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RememberMeAppTesting;
+			path = RememberMeAppUITests;
+			sourceTree = "<group>";
+		};
+		A5C7587E2D0C5673006F419D /* RememberMeAppTests_Testing */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RememberMeAppTests_Testing;
 			sourceTree = "<group>";
 		};
 		A5E3AAB92CFDA4F700AF44EF /* RememberMeApp */ = {
@@ -52,21 +49,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A551C5662CFDC8C200DD79A3 /* Frameworks */ = {
+		A5ADA9732D108D940037EC83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A551C5732CFDC95A00DD79A3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A551C5802CFDC9CC00DD79A3 /* Frameworks */ = {
+		A5C7587A2D0C5673006F419D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -88,7 +78,8 @@
 			children = (
 				A551C58C2CFDCFFF00DD79A3 /* RememberMeApp.xctestplan */,
 				A5E3AAB92CFDA4F700AF44EF /* RememberMeApp */,
-				A551C5842CFDC9CD00DD79A3 /* RememberMeAppTesting */,
+				A5C7587E2D0C5673006F419D /* RememberMeAppTests_Testing */,
+				A5ADA9772D108D940037EC83 /* RememberMeAppUITests */,
 				A5E3AAB82CFDA4F700AF44EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,9 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				A5E3AAB72CFDA4F700AF44EF /* RememberMeApp.app */,
-				A551C5692CFDC8C200DD79A3 /* RememberMeAppUITests.xctest */,
-				A551C5762CFDC95A00DD79A3 /* RememberMeAppTests.xctest */,
-				A551C5832CFDC9CC00DD79A3 /* RememberMeAppTesting.xctest */,
+				A5C7587D2D0C5673006F419D /* RememberMeAppTests_Testing.xctest */,
+				A5ADA9762D108D940037EC83 /* RememberMeAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,67 +97,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A551C5682CFDC8C200DD79A3 /* RememberMeAppUITests */ = {
+		A5ADA9752D108D940037EC83 /* RememberMeAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A551C56F2CFDC8C200DD79A3 /* Build configuration list for PBXNativeTarget "RememberMeAppUITests" */;
+			buildConfigurationList = A5ADA9802D108D940037EC83 /* Build configuration list for PBXNativeTarget "RememberMeAppUITests" */;
 			buildPhases = (
-				A551C5652CFDC8C200DD79A3 /* Sources */,
-				A551C5662CFDC8C200DD79A3 /* Frameworks */,
-				A551C5672CFDC8C200DD79A3 /* Resources */,
+				A5ADA9722D108D940037EC83 /* Sources */,
+				A5ADA9732D108D940037EC83 /* Frameworks */,
+				A5ADA9742D108D940037EC83 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A551C56E2CFDC8C200DD79A3 /* PBXTargetDependency */,
+				A5ADA97D2D108D940037EC83 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A5ADA9772D108D940037EC83 /* RememberMeAppUITests */,
 			);
 			name = RememberMeAppUITests;
 			packageProductDependencies = (
 			);
 			productName = RememberMeAppUITests;
-			productReference = A551C5692CFDC8C200DD79A3 /* RememberMeAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			productReference = A5ADA9762D108D940037EC83 /* RememberMeAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		A551C5752CFDC95A00DD79A3 /* RememberMeAppTests */ = {
+		A5C7587C2D0C5673006F419D /* RememberMeAppTests_Testing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A551C57C2CFDC95A00DD79A3 /* Build configuration list for PBXNativeTarget "RememberMeAppTests" */;
+			buildConfigurationList = A5C758832D0C5673006F419D /* Build configuration list for PBXNativeTarget "RememberMeAppTests_Testing" */;
 			buildPhases = (
-				A551C5722CFDC95A00DD79A3 /* Sources */,
-				A551C5732CFDC95A00DD79A3 /* Frameworks */,
-				A551C5742CFDC95A00DD79A3 /* Resources */,
+				A5C758792D0C5673006F419D /* Sources */,
+				A5C7587A2D0C5673006F419D /* Frameworks */,
+				A5C7587B2D0C5673006F419D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A551C57B2CFDC95A00DD79A3 /* PBXTargetDependency */,
-			);
-			name = RememberMeAppTests;
-			packageProductDependencies = (
-			);
-			productName = RememberMeAppTests;
-			productReference = A551C5762CFDC95A00DD79A3 /* RememberMeAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A551C5822CFDC9CC00DD79A3 /* RememberMeAppTesting */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A551C5892CFDC9CD00DD79A3 /* Build configuration list for PBXNativeTarget "RememberMeAppTesting" */;
-			buildPhases = (
-				A551C57F2CFDC9CC00DD79A3 /* Sources */,
-				A551C5802CFDC9CC00DD79A3 /* Frameworks */,
-				A551C5812CFDC9CC00DD79A3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A551C5882CFDC9CD00DD79A3 /* PBXTargetDependency */,
+				A5C758822D0C5673006F419D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A551C5842CFDC9CD00DD79A3 /* RememberMeAppTesting */,
+				A5C7587E2D0C5673006F419D /* RememberMeAppTests_Testing */,
 			);
-			name = RememberMeAppTesting;
+			name = RememberMeAppTests_Testing;
 			packageProductDependencies = (
 			);
-			productName = RememberMeAppTesting;
-			productReference = A551C5832CFDC9CC00DD79A3 /* RememberMeAppTesting.xctest */;
+			productName = RememberMeAppTests_Testing;
+			productReference = A5C7587D2D0C5673006F419D /* RememberMeAppTests_Testing.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A5E3AAB62CFDA4F700AF44EF /* RememberMeApp */ = {
@@ -202,15 +175,11 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
-					A551C5682CFDC8C200DD79A3 = {
+					A5ADA9752D108D940037EC83 = {
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = A5E3AAB62CFDA4F700AF44EF;
 					};
-					A551C5752CFDC95A00DD79A3 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = A5E3AAB62CFDA4F700AF44EF;
-					};
-					A551C5822CFDC9CC00DD79A3 = {
+					A5C7587C2D0C5673006F419D = {
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = A5E3AAB62CFDA4F700AF44EF;
 					};
@@ -234,29 +203,21 @@
 			projectRoot = "";
 			targets = (
 				A5E3AAB62CFDA4F700AF44EF /* RememberMeApp */,
-				A551C5682CFDC8C200DD79A3 /* RememberMeAppUITests */,
-				A551C5752CFDC95A00DD79A3 /* RememberMeAppTests */,
-				A551C5822CFDC9CC00DD79A3 /* RememberMeAppTesting */,
+				A5C7587C2D0C5673006F419D /* RememberMeAppTests_Testing */,
+				A5ADA9752D108D940037EC83 /* RememberMeAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A551C5672CFDC8C200DD79A3 /* Resources */ = {
+		A5ADA9742D108D940037EC83 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A551C5742CFDC95A00DD79A3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A551C5812CFDC9CC00DD79A3 /* Resources */ = {
+		A5C7587B2D0C5673006F419D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -273,21 +234,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A551C5652CFDC8C200DD79A3 /* Sources */ = {
+		A5ADA9722D108D940037EC83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A551C5722CFDC95A00DD79A3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A551C57F2CFDC9CC00DD79A3 /* Sources */ = {
+		A5C758792D0C5673006F419D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,31 +258,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A551C56E2CFDC8C200DD79A3 /* PBXTargetDependency */ = {
+		A5ADA97D2D108D940037EC83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5E3AAB62CFDA4F700AF44EF /* RememberMeApp */;
-			targetProxy = A551C56D2CFDC8C200DD79A3 /* PBXContainerItemProxy */;
+			targetProxy = A5ADA97C2D108D940037EC83 /* PBXContainerItemProxy */;
 		};
-		A551C57B2CFDC95A00DD79A3 /* PBXTargetDependency */ = {
+		A5C758822D0C5673006F419D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5E3AAB62CFDA4F700AF44EF /* RememberMeApp */;
-			targetProxy = A551C57A2CFDC95A00DD79A3 /* PBXContainerItemProxy */;
-		};
-		A551C5882CFDC9CD00DD79A3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5E3AAB62CFDA4F700AF44EF /* RememberMeApp */;
-			targetProxy = A551C5872CFDC9CD00DD79A3 /* PBXContainerItemProxy */;
+			targetProxy = A5C758812D0C5673006F419D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		A551C5702CFDC8C200DD79A3 /* Debug */ = {
+		A5ADA97E2D108D940037EC83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTXN6A6WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = daniilvash.RememberMeAppUITests;
@@ -336,17 +283,15 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RememberMeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RememberMeApp";
+				TEST_TARGET_NAME = RememberMeApp;
 			};
 			name = Debug;
 		};
-		A551C5712CFDC8C200DD79A3 /* Release */ = {
+		A5ADA97F2D108D940037EC83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTXN6A6WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = daniilvash.RememberMeAppUITests;
@@ -354,20 +299,19 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RememberMeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RememberMeApp";
+				TEST_TARGET_NAME = RememberMeApp;
 			};
 			name = Release;
 		};
-		A551C57D2CFDC95A00DD79A3 /* Debug */ = {
+		A5C758842D0C5673006F419D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTXN6A6WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniilvash.RememberMeAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "daniilvash.RememberMeAppTests-Testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -376,66 +320,19 @@
 			};
 			name = Debug;
 		};
-		A551C57E2CFDC95A00DD79A3 /* Release */ = {
+		A5C758852D0C5673006F419D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTXN6A6WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniilvash.RememberMeAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "daniilvash.RememberMeAppTests-Testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RememberMeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RememberMeApp";
-			};
-			name = Release;
-		};
-		A551C58A2CFDC9CD00DD79A3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTXN6A6WV;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniilvash.RememberMeAppTesting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RememberMeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RememberMeApp";
-			};
-			name = Debug;
-		};
-		A551C58B2CFDC9CD00DD79A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTXN6A6WV;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniilvash.RememberMeAppTesting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RememberMeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RememberMeApp";
 			};
 			name = Release;
@@ -636,29 +533,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A551C56F2CFDC8C200DD79A3 /* Build configuration list for PBXNativeTarget "RememberMeAppUITests" */ = {
+		A5ADA9802D108D940037EC83 /* Build configuration list for PBXNativeTarget "RememberMeAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A551C5702CFDC8C200DD79A3 /* Debug */,
-				A551C5712CFDC8C200DD79A3 /* Release */,
+				A5ADA97E2D108D940037EC83 /* Debug */,
+				A5ADA97F2D108D940037EC83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A551C57C2CFDC95A00DD79A3 /* Build configuration list for PBXNativeTarget "RememberMeAppTests" */ = {
+		A5C758832D0C5673006F419D /* Build configuration list for PBXNativeTarget "RememberMeAppTests_Testing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A551C57D2CFDC95A00DD79A3 /* Debug */,
-				A551C57E2CFDC95A00DD79A3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A551C5892CFDC9CD00DD79A3 /* Build configuration list for PBXNativeTarget "RememberMeAppTesting" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A551C58A2CFDC9CD00DD79A3 /* Debug */,
-				A551C58B2CFDC9CD00DD79A3 /* Release */,
+				A5C758842D0C5673006F419D /* Debug */,
+				A5C758852D0C5673006F419D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
