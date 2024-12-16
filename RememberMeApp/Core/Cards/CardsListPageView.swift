@@ -10,10 +10,15 @@ struct CardsListPageView: View {
     @State private var enterTranslation = ""
     @State private var cards: [Cards] = []
     @State private var startGame = false
+<<<<<<< HEAD
     @State private var isEditing = false
     @State private var selectedCard: Cards? = nil
     @State private var notEnughCardsToStartGame = false
     
+=======
+//    @State private var isGameStarted = false
+//    @State private var showAlert = false
+>>>>>>> 3649437e2997088b4b1e6b6969a50ed25a94c564
     var body: some View {
         VStack {
             List {
@@ -26,9 +31,10 @@ struct CardsListPageView: View {
                 .onDelete { offsets in
                     for index in offsets {
                         let cardToDelete = cards[index]
+                        print("Deleting card: \(cardToDelete.word ?? "Unknown")")
                         userDataModel.deleteCard(cardToDelete)
                     }
-                    refreshCards()
+                    refreshCards() // Обновляем массив после удаления
                 }
             }
             .listStyle(.plain)
@@ -42,6 +48,7 @@ struct CardsListPageView: View {
                 }
             }
             .sheet(isPresented: $addButtonPressed) {
+<<<<<<< HEAD
                 addCardSheet
             }
             .sheet(item: $selectedCard) { card in
@@ -50,6 +57,35 @@ struct CardsListPageView: View {
             .sheet(isPresented: $startGame) {
                 MainGamePageView(deck: deck)
             }
+=======
+                            VStack {
+                                Text("Add card")
+                                TextField("Word", text: $enterWord)
+                                    .padding()
+                                    .textFieldStyle(.roundedBorder)
+                                TextField("Translate", text: $enterTranslation)
+                                    .padding()
+                                    .textFieldStyle(.roundedBorder)
+                                Button {
+                                    userDataModel.addCard(to: deck, word: enterWord, translation: enterTranslation)
+                                    addButtonPressed = false
+                                    refreshCards()
+                                    enterWord = ""
+                                    enterTranslation = ""
+                                } label: {
+                                    Text("Add Card")
+                                        .getCustomButtonStyle()
+                                        .padding()
+                                }
+                            }
+                            .onAppear(perform: refreshCards)
+                        }
+
+            // Модальное окно игры
+//            .sheet(isPresented: $startGame) {
+//                MainGamePageView(deck: deck)
+//            }
+>>>>>>> 3649437e2997088b4b1e6b6969a50ed25a94c564
         }
         .onAppear(perform: refreshCards)
         .alert(isPresented: $notEnughCardsToStartGame) {

@@ -1,9 +1,34 @@
+////
+////  CradCustimizeView.swift
+////  RememberMeApp
+////
+////  Created by Daniil on 08/12/2024.
+////
 //
-//  CradCustimizeView.swift
-//  RememberMeApp
+//import SwiftUI
 //
-//  Created by Daniil on 08/12/2024.
+//struct CradCustimizeView: View {
+//    @State var theWord: String
+//    @State var theTranslate: String
+//    @State private var cardMode = false
+//    var body: some View {
+//            Button {
+//                cardMode.toggle()
+//            } label: {
+//                ZStack {
+//                    RoundedRectangle(cornerRadius: 25)
+//                        .fill(.blue)
+//                        .frame(height: 350)
+//                    Text(cardMode ? theTranslate : theWord)
+//                        .foregroundStyle(.white)
+//                        .font(.largeTitle.bold())
+//                }
+//                .padding(.horizontal, 80)
+//            }
+//    }
+//}
 //
+<<<<<<< HEAD
 
 import SwiftUI
 
@@ -33,3 +58,8 @@ struct CradCustimizeView: View {
 #Preview {
     CradCustimizeView(theWord: "word", theTranslate: "translate")
 }
+=======
+//#Preview {
+//    CradCustimizeView(theWord: "word", theTranslate: "translate")
+//}
+>>>>>>> 3649437e2997088b4b1e6b6969a50ed25a94c564
